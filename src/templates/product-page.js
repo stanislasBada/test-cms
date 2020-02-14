@@ -37,7 +37,7 @@ export const ProductPageTemplate = ({
           padding: '1rem',
         }}
       >
-        {title}
+        {title} test code push
       </h2>
     </div>
     <section className="section section--gradient">
@@ -166,7 +166,6 @@ export const productPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
-        color
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
