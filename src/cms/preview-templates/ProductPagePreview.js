@@ -16,6 +16,7 @@ const ProductPagePreview = ({ entry, getAsset }) => {
     <ProductPageTemplate
       image={getAsset(entry.getIn(['data', 'image']))}
       title={entry.getIn(['data', 'title'])}
+      color={entry.getIn(['data', 'color'])}
       heading={entry.getIn(['data', 'heading'])}
       description={entry.getIn(['data', 'description'])}
       intro={{ blurbs }}

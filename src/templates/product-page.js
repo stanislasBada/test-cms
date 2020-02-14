@@ -10,6 +10,7 @@ import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 export const ProductPageTemplate = ({
   image,
   title,
+  color,
   heading,
   description,
   intro,
@@ -32,7 +33,7 @@ export const ProductPageTemplate = ({
         style={{
           boxShadow: '0.5rem 0 0 #f40, -0.5rem 0 0 #f40',
           backgroundColor: '#f40',
-          color: 'white',
+          color: color,
           padding: '1rem',
         }}
       >
@@ -107,6 +108,7 @@ export const ProductPageTemplate = ({
 ProductPageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
+  color: PropTypes.string,
   heading: PropTypes.string,
   description: PropTypes.string,
   intro: PropTypes.shape({
@@ -136,6 +138,7 @@ const ProductPage = ({ data }) => {
       <ProductPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
+        color={frontmatter.color}
         heading={frontmatter.heading}
         description={frontmatter.description}
         intro={frontmatter.intro}
@@ -163,6 +166,7 @@ export const productPageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       frontmatter {
         title
+        color
         image {
           childImageSharp {
             fluid(maxWidth: 2048, quality: 100) {
